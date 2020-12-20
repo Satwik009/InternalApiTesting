@@ -6,9 +6,12 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 
-    <bean id="test"
-          class="">
+    <bean id="restAssured"
+          class="API.RestAssuredFunction">
     </bean>
 
+    <bean id="jsonUtilities"
+          class="JsonUtils.JsonUtility">
+    </bean>
 
 </beans>
