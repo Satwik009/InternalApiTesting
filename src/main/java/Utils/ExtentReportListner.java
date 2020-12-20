@@ -16,6 +16,7 @@ public class ExtentReportListner  implements ITestListener{
     public static ExtentTest test;
 
     private static String resultpath = getResultPath();
+    String ReportLocation = GetPath.getProjectPath()+"/src/test/Report" + resultpath + "/";
 
 
     public static void deleteDirectory(File directory) {
@@ -42,8 +43,6 @@ public class ExtentReportListner  implements ITestListener{
         }
         return resultpath;
     }
-
-    String ReportLocation = GetPath.getProjectPath()+"/src/test/Report" + resultpath + "/";
 
     public void onTestStart(ITestResult result) {
 
