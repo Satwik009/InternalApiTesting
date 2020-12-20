@@ -8,7 +8,6 @@ import org.testng.Assert;
 
 public class RestAssuredFunction extends Base {
 
-
     public Response getRequest(String endPoints,int status) throws Exception {
 
         Response response = RestAssured.get(RestAssured.baseURI + ReadPropertyFile.getValueForApiConfig(endPoints, GetPath.APIPropertyFilePath));
