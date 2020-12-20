@@ -7,6 +7,7 @@ public class GetPath {
 
     public static String BeanFile = GetPath.getProjectPath()+"/src/main/resources/spring.xml";
     public static String BASE_URI="https://reqres.in";
+    public static String JsonFilePath = GetPath.getProjectPath()+"/src/main/resources/jsonFiles/";
 
     public static String getProjectPath()
     {

@@ -21,9 +21,7 @@ public class RestAssuredFunction extends Base {
 
     public Response postRequest(String endPoints, int statusCode, String body) throws Exception {
 
-
         Response response = RestAssured.given().body(body).post(ReadPropertyFile.getValueForApiConfig(endPoints, GetPath.APIPropertyFilePath));
-
         response.getBody().prettyPrint().toString();
 
         Assert.assertEquals(response.getStatusCode(), statusCode);
