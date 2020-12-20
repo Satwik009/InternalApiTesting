@@ -5,21 +5,21 @@ import Utils.ReadPropertyFile;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class RestAssuredFunction extends Base {
 
 
-    public Response getRequest(String endPoints) throws Exception {
+    public Response getRequest(String endPoints,int status) throws Exception {
 
         Response response = RestAssured.get(RestAssured.baseURI + ReadPropertyFile.getValueForApiConfig(endPoints, GetPath.APIPropertyFilePath));
+          int statusCode=  response.getStatusCode();
+        Assert.assertEquals(statusCode, status);
 
         return response;
     }
 
 
-    @Test
-    public Response postRequest(String endPoints, String statusCode, String body) throws Exception {
+    public Response postRequest(String endPoints, int statusCode, String body) throws Exception {
 
 
         Response response = RestAssured.given().body(body).post(ReadPropertyFile.getValueForApiConfig(endPoints, GetPath.APIPropertyFilePath));

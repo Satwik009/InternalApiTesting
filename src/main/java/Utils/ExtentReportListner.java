@@ -36,14 +36,14 @@ public class ExtentReportListner  implements ITestListener{
 
     private static String getResultPath() {
 
-        resultpath = "test"+new SimpleDateFormat("yyyy-MM-dd hh-mm.ss").format(new Date());
+        resultpath = " For Execution On "+new SimpleDateFormat("yyyy-MM-dd hh-mm.ss").format(new Date());
         if (!new File(resultpath).isDirectory()) {
             new File(resultpath);
         }
         return resultpath;
     }
 
-    String ReportLocation = GetPath.getProjectPath()+"/src/test/Reports" + resultpath + "/";
+    String ReportLocation = GetPath.getProjectPath()+"/src/test/Report" + resultpath + "/";
 
     public void onTestStart(ITestResult result) {
 
